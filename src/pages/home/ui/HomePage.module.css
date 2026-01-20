@@ -1,0 +1,16 @@
+.container {
+  padding: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-primary);
+}
+
+.container p {
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+}

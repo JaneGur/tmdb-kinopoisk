@@ -1,0 +1,10 @@
+.container {
+  padding: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container h1 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-md);
+}
