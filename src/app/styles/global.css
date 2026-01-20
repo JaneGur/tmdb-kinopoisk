@@ -5,31 +5,59 @@
 }
 
 :root {
-  --color-primary: #1976d2;
-  --color-secondary: #dc004e;
+  /* TMDB Colors */
+  --color-primary: #01b4e4;
+  --color-primary-dark: #0d253f;
+  --color-secondary: #90cea1;
   --color-background: #ffffff;
-  --color-surface: #f5f5f5;
-  --color-text-primary: #212121;
-  --color-text-secondary: #757575;
-  --color-border: #e0e0e0;
+  --color-surface: #ffffff;
+  --color-text-primary: #000000;
+  --color-text-secondary: #666666;
+  --color-border: #e3e3e3;
+  --color-header: #032541;
+  --color-rating: #21d07a;
+  
+  /* Spacing */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
   --spacing-md: 16px;
   --spacing-lg: 24px;
   --spacing-xl: 32px;
-  --border-radius: 8px;
+  --spacing-xxl: 48px;
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-card: 8px;
+  
+  /* Transitions */
   --transition: 0.3s ease;
+  --transition-fast: 0.15s ease;
+}
+
+[data-theme='dark'] {
+  --color-primary: #01b4e4;
+  --color-primary-dark: #0d253f;
+  --color-secondary: #90cea1;
+  --color-background: #0d1117;
+  --color-surface: #161b22;
+  --color-text-primary: #c9d1d9;
+  --color-text-secondary: #8b949e;
+  --color-border: #30363d;
+  --color-header: #010409;
+  --color-rating: #21d07a;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-background);
   color: var(--color-text-primary);
-  line-height: 1.6;
+  line-height: 1.5;
+  transition: background-color var(--transition), color var(--transition);
 }
 
 #root {
@@ -41,10 +69,11 @@ body {
 a {
   color: var(--color-primary);
   text-decoration: none;
+  transition: color var(--transition-fast);
 }
 
 a:hover {
-  text-decoration: underline;
+  color: var(--color-primary-dark);
 }
 
 button {
@@ -56,4 +85,9 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
 }

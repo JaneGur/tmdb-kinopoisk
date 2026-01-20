@@ -1,0 +1,58 @@
+.rating {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  transform: rotate(-90deg);
+}
+
+.circleBackground {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 2;
+}
+
+.circleProgress {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.6s ease;
+}
+
+.value {
+  position: absolute;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* Sizes */
+.small {
+  width: 36px;
+  height: 36px;
+}
+
+.small .value {
+  font-size: 0.65rem;
+}
+
+.medium {
+  width: 48px;
+  height: 48px;
+}
+
+.medium .value {
+  font-size: 0.8rem;
+}
+
+.large {
+  width: 60px;
+  height: 60px;
+}
+
+.large .value {
+  font-size: 1rem;
+}

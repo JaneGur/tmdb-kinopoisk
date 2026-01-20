@@ -10,5 +10,5 @@ export const store = configureStore({
     }).concat(baseApi.middleware),
 })
 
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof rootReducer>
 export type AppDispatch = typeof store.dispatch

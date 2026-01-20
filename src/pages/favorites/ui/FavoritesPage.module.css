@@ -1,10 +1,149 @@
 .container {
-  padding: var(--spacing-lg);
-  max-width: 1200px;
+  padding: var(--spacing-xxl) var(--spacing-xl);
+  max-width: 1400px;
   margin: 0 auto;
+  background-color: var(--color-background);
 }
 
-.container h1 {
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-xl);
+}
+
+.titleSection h1 {
   font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 var(--spacing-xs) 0;
+  color: var(--color-text-primary);
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xxl);
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, rgba(1, 180, 228, 0.1), rgba(30, 213, 169, 0.1));
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.statValue {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Movies Grid */
+.moviesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* Empty State */
+.emptyState {
+  text-align: center;
+  padding: var(--spacing-xxl) var(--spacing-xl);
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.emptyIcon {
+  font-size: 5rem;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.3;
+  filter: grayscale(100%);
+}
+
+.emptyState h1 {
+  font-size: 2rem;
+  font-weight: 700;
   margin-bottom: var(--spacing-md);
+  color: var(--color-text-primary);
+}
+
+.emptyMessage {
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+}
+
+.emptyHint {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  opacity: 0.8;
+  max-width: 500px;
+}
+
+@media (min-width: 1400px) {
+  .moviesGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .titleSection h1 {
+    font-size: 1.6rem;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .statItem {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .moviesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .emptyIcon {
+    font-size: 4rem;
+  }
+
+  .emptyState h1 {
+    font-size: 1.6rem;
+  }
 }

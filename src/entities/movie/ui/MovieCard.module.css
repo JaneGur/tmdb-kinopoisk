@@ -1,0 +1,111 @@
+.movieCard {
+  cursor: pointer;
+  overflow: visible;
+  padding: 0;
+  transition: transform var(--transition-fast);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-card);
+  background: transparent;
+  border: 1px solid transparent;
+  position: relative;
+}
+
+.movieCard:hover {
+  transform: scale(1.03);
+}
+
+.movieCard:hover .poster {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.posterWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.poster {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-card);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow var(--transition-fast);
+}
+
+.favoriteButton {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  opacity: 0;
+  transform: scale(0.8);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.movieCard:hover .favoriteButton {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.favoriteButton.active {
+  opacity: 1;
+  transform: scale(1);
+  background: rgba(255, 255, 255, 1);
+}
+
+.favoriteButton:hover {
+  transform: scale(1.1);
+  background: white;
+}
+
+.heartIcon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.ratingBadge {
+  position: absolute;
+  bottom: -6px;
+  left: 8px;
+  background: var(--color-primary-dark);
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.movieInfo {
+  padding: var(--spacing-md) var(--spacing-xs) 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.movieTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+  min-height: 2.8em;
+}
+
+.releaseDate {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}

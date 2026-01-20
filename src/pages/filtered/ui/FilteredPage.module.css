@@ -1,0 +1,121 @@
+.container {
+  padding: var(--spacing-xxl) var(--spacing-xl);
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: var(--color-background);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--spacing-xxl);
+}
+
+.content {
+  min-width: 0; /* Важно для правильной работы grid */
+}
+
+.header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.filtersBadge {
+  padding: 4px 12px;
+  background: linear-gradient(to right, #1ed5a9, #01b4e4);
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.info {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+.moviesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xxl);
+  padding: var(--spacing-lg) 0;
+}
+
+.pageInfo {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  min-width: 120px;
+  text-align: center;
+}
+
+.error,
+.empty {
+  text-align: center;
+  padding: var(--spacing-xxl);
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+}
+
+.error {
+  color: #d32f2f;
+}
+
+@media (min-width: 1400px) {
+  .moviesGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .moviesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .pagination button {
+    width: 100%;
+  }
+}

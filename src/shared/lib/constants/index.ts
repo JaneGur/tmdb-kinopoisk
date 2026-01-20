@@ -16,6 +16,8 @@ export const IMAGE_SIZES = {
 export const ROUTES = {
   HOME: '/',
   MOVIE: '/movie',
+  CATEGORIES: '/categories',
+  FILTERED: '/filtered',
   SEARCH: '/search',
   FAVORITES: '/favorites',
 } as const

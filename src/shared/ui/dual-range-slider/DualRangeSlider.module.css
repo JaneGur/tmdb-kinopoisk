@@ -1,0 +1,177 @@
+.container {
+  width: 100%;
+  padding: var(--spacing-sm) 0;
+}
+
+.values {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+}
+
+.valueBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.valueLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.valueNumber {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background-color: rgba(1, 180, 228, 0.1);
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  min-width: 50px;
+  text-align: center;
+}
+
+.sliderContainer {
+  position: relative;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Трек (общая линия) */
+.track {
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  background-color: var(--color-border);
+  border-radius: var(--radius-sm);
+  pointer-events: none;
+}
+
+/* Активная область между ползунками */
+.activeTrack {
+  position: absolute;
+  height: 6px;
+  background: linear-gradient(to right, #1ed5a9, #01b4e4);
+  border-radius: var(--radius-sm);
+  pointer-events: none;
+}
+
+/* Базовые стили для range inputs */
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  background: transparent;
+  pointer-events: none;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Thumb для Webkit (Chrome, Safari) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--color-primary);
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 3px 8px rgba(1, 180, 228, 0.4);
+}
+
+.slider.dragging::-webkit-slider-thumb {
+  transform: scale(1.2);
+  box-shadow: 0 4px 12px rgba(1, 180, 228, 0.5);
+}
+
+/* Thumb для Firefox */
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--color-primary);
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 3px 8px rgba(1, 180, 228, 0.4);
+}
+
+.slider.dragging::-moz-range-thumb {
+  transform: scale(1.2);
+  box-shadow: 0 4px 12px rgba(1, 180, 228, 0.5);
+}
+
+/* Track для Firefox (нужно скрыть) */
+.slider::-moz-range-track {
+  background: transparent;
+  border: none;
+}
+
+/* Track для Webkit (нужно скрыть) */
+.slider::-webkit-slider-runnable-track {
+  background: transparent;
+  border: none;
+}
+
+/* Дополнительные thumbs для визуализации (не используются, но оставлены на случай) */
+.thumb {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  display: none; /* Скрываем, используем нативные thumbs */
+}
+
+/* Метки */
+.labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  padding: 0 2px;
+  margin-top: var(--spacing-xs);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .valueNumber {
+    font-size: 1rem;
+    padding: 3px 10px;
+    min-width: 45px;
+  }
+
+  .slider::-webkit-slider-thumb {
+    width: 18px;
+    height: 18px;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+  }
+}
