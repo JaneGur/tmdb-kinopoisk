@@ -1,12 +1,12 @@
 import { Provider } from 'react-redux'
-import { RouterProvider } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { useEffect } from 'react'
 import { ToastContainer } from 'react-toastify'
 import { store } from './store'
-import { router } from './router'
-import { useAppSelector, useGlobalLoading } from '@shared/lib/hooks'
+import { Routing } from '@common/routing'
+import { useAppSelector, useGlobalLoading } from '@common/hooks'
 import { selectTheme } from '@features/theme'
-import { LinearProgress } from '@shared/ui/linear-progress'
+import { LinearProgress } from '@common/components/ui/linear-progress'
 import './styles/global.css'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -28,7 +28,9 @@ function AppContent() {
     <>
       <ThemeInitializer />
       {isGlobalLoading && <LinearProgress />}
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        <Routing />
+      </BrowserRouter>
       <ToastContainer
         position="top-right"
         autoClose={5000}

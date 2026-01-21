@@ -1,6 +1,6 @@
-import { configureStore } from '@reduxjs/toolkit'
+﻿import { configureStore } from '@reduxjs/toolkit'
 import { rootReducer } from './rootReducer'
-import { baseApi } from '@shared/api/baseApi'
+import { baseApi } from '@common/api/baseApi'
 
 export const store = configureStore({
   reducer: rootReducer,
@@ -11,4 +11,3 @@ export const store = configureStore({
 })
 
 export type RootState = ReturnType<typeof rootReducer>
-export type AppDispatch = typeof store.dispatch

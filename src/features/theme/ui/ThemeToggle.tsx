@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from '@shared/lib/hooks'
+import { useAppDispatch, useAppSelector } from '@common/hooks'
 import { toggleTheme, selectTheme } from '@features/theme'
 import styles from './ThemeToggle.module.css'
 

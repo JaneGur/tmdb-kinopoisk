@@ -1,8 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { Movie } from '@entities/movie'
+﻿import { createSlice } from '@reduxjs/toolkit'
+import type { Movie } from '@common/components/movie'
 
 // Минимальный набор данных для хранения в localStorage
-export interface FavoriteMovie {
+export type FavoriteMovie = {
   id: number
   title: string
   poster_path: string | null
@@ -10,7 +10,7 @@ export interface FavoriteMovie {
   release_date: string
 }
 
-interface FavoritesState {
+type FavoritesState = {
   items: FavoriteMovie[]
 }
 

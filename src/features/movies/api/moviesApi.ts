@@ -1,5 +1,5 @@
-import { baseApi } from '@shared/api/baseApi'
-import { withZodCatch } from '@shared/lib/utils'
+﻿import { baseApi } from '@common/api/baseApi'
+import { withZodCatch } from '@common/utils'
 import type { 
   MoviesResponse, 
   SearchMoviesParams, 
@@ -7,13 +7,13 @@ import type {
   GenresResponse,
   MovieDetails,
   MovieCredits 
-} from '@entities/movie'
+} from '@common/components/movie'
 import {
   moviesResponseSchema,
   genresResponseSchema,
   movieDetailsSchema,
   movieCreditsSchema,
-} from '@entities/movie'
+} from '@common/components/movie'
 
 export const moviesApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({

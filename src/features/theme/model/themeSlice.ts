@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 export type Theme = 'light' | 'dark'
 
-interface ThemeState {
+type ThemeState = {
   current: Theme
 }
 

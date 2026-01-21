@@ -1,0 +1,19 @@
+import type {ReactNode} from 'react'
+import styles from './Card.module.css'
+
+type CardProps = {
+  children: ReactNode
+  className?: string
+  onClick?: () => void
+}
+
+export function Card({ children, className = '', onClick }: CardProps) {
+  return (
+    <div 
+      className={`${styles.card} ${className} ${onClick ? styles.clickable : ''}`}
+      onClick={onClick}
+    >
+      {children}
+    </div>
+  )
+}

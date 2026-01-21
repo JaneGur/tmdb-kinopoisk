@@ -1,0 +1,137 @@
+.container {
+  padding: var(--spacing-xxl) var(--spacing-xl);
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: var(--color-background);
+}
+
+.categoryTabs {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+.categoryTab {
+  padding: 10px 20px;
+  border: 2px solid var(--color-border);
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+
+.categoryTab:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: rgba(1, 180, 228, 0.05);
+}
+
+.categoryTab.active {
+  background: linear-gradient(to right, #1ed5a9, #01b4e4);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(1, 180, 228, 0.3);
+}
+
+.categoryTab.active:hover {
+  box-shadow: 0 4px 12px rgba(1, 180, 228, 0.4);
+  transform: translateY(-1px);
+}
+
+.header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-primary);
+}
+
+.info {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+}
+
+.moviesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xxl);
+  padding: var(--spacing-lg) 0;
+}
+
+.pageInfo {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  min-width: 120px;
+  text-align: center;
+}
+
+.error,
+.empty {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+}
+
+.error {
+  color: #d32f2f;
+}
+
+@media (min-width: 1400px) {
+  .moviesGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .categoryTabs {
+    gap: var(--spacing-xs);
+  }
+
+  .categoryTab {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    flex: 1;
+    min-width: calc(50% - var(--spacing-xs));
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .moviesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .pagination button {
+    width: 100%;
+  }
+}
