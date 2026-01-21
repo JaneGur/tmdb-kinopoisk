@@ -8,14 +8,7 @@ export function Footer() {
       <div className={styles.container}>
         <p className={styles.text}>
           © {currentYear} Kinopoisk Demo · Данные предоставлены{' '}
-          <a 
-            href="https://www.themoviedb.org/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className={styles.link}
-          >
-            TMDB
-          </a>
+          TMDB.
         </p>
       </div>
     </footer>
