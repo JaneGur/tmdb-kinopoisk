@@ -1,5 +1,5 @@
 ﻿import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { ENV } from '@common/config/env'
+import { ENV } from '@common/config/env.ts'
 import { handleErrors } from '@common/utils'
 
 export const baseApi = createApi({

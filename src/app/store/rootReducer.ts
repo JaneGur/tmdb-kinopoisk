@@ -1,5 +1,5 @@
 ﻿import { combineReducers } from '@reduxjs/toolkit'
-import { baseApi } from '@common/api/baseApi'
+import { baseApi } from '@app/api/baseApi'
 import { themeReducer } from '@features/theme'
 import { favoritesReducer } from '@features/favorites'
 

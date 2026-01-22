@@ -1,4 +1,4 @@
-﻿import { baseApi } from '@common/api/baseApi'
+﻿import { baseApi } from '@app/api/baseApi'
 import { withZodCatch } from '@common/utils'
 import type { 
   MoviesResponse, 
